@@ -12,7 +12,7 @@ class PaymentModel extends Model {
         clients.name as client_name, 
         products.name as product_name, 
         methods_payment.name as payment_name,
-        DATE_FORMAT(payments.expire_in, '%d/%m/%Y %H:%i:%s') as expire_in
+        DATE_FORMAT(payments.expire_in, '%d/%m/%Y') as expire_in
         FROM payments
         INNER JOIN clients
         ON clients.id = payments.client_id
