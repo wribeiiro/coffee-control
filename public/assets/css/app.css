@@ -1,0 +1,77 @@
+:root {
+    --purple: #815FC6;
+    --white: #FFF;
+}
+
+body {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 14px !important;
+}
+
+.bg-purple {
+    background: var(--purple) !important;
+    border: var(--purple) solid 1px !important;
+}
+
+.btn-purple {
+    background: var(--white) !important;
+    border: var(--purple) solid 2px !important;
+    color: var(--purple);
+    font-weight: 600;
+}
+
+.border-left-purple {
+    border-left: .25rem solid var(--purple) !important;
+}
+
+.font-weight-bold {
+    font-weight: 600;
+}
+
+table>tbody>tr>td,
+table>tbody>tr>th,
+table>tfoot>tr>td,
+table>tfoot>tr>th,
+table>thead>tr>td,
+table>thead>tr>th {
+    padding: 4px 4px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    /*text-transform: uppercase !important;*/
+}
+
+table>thead>tr>th,
+table>tfoot>tr>th {
+    font-weight: bold !important;
+    background: var(--purple);
+    color: #fff !important;
+}
+
+table.dataTable {
+    border-collapse: collapse !important;
+}
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:before {
+    content: "" !important;
+}
+
+.dataTables_filter {
+    display: none !important;
+}
+
+.ht-300 {
+    height: 300px;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+    background-color: var(--purple) !important;
+    border-color: var(--purple) !important;
+    color: var(--white) !important;
+}

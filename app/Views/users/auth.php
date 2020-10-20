@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+<<<<<<< HEAD
+	<meta name="author" content="">
+	<link href="<?= base_url() ?>/assets/img/logo/logo.png" rel="icon">
+	<title><?= $title . ' - ' . $complement ?></title>
+	<link href="<?= base_url() ?>/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="<?= base_url() ?>/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<?= base_url() ?>/assets/css/app.css?v=<?= CSS_VERSION ?>" rel="stylesheet">
+=======
+	<meta name="author" content="Wellisson Ribeiro">
+	<link href="https://wribeiiro.com/tickets/assets/img/icon.png" rel="icon">
+	<title><?=$title?></title>
+	<link href="<?=base_url()?>/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="<?=base_url()?>/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<?=base_url()?>/assets/css/ruang-admin.min.css" rel="stylesheet">
+	<link href="<?=base_url()?>/assets/css/app.css?v=<?=CSS_VERSION?>" rel="stylesheet">
+>>>>>>> 1de182032707472a9accd497c992070c2b621cc2
+</head>
+
+<body class="bg-purple" style="overflow-x: hidden;">
+	<!-- Login Content -->
+	<div class="container-login">
+		<div class="row justify-content-center">
+<<<<<<< HEAD
+			<div class="col-lg-4 col-md-4 col-xs-12">
+				<div class="card shadow-sm my-5">
+					<div class="card-body p-5">
+						<div class="login-form">
+							<div class="text-center form-group">
+								<!--<img class="mb-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrGrdKw6jGaIdNJ1ZmpVHQlYjuKbqiMRnDBA&usqp=CAU" alt="logo" title="logo" width="100" height="auto">-->
+								<h1 class="h6 text-gray-900 mb-4">Hello there! Welcome back!</h1>
+							</div>
+							<form class="user" method="post" id="form" action="<?= base_url('login') ?>">
+								<?php if (isset($validation)) : ?>
+=======
+			<div class="col-xl-12 col-lg-12 col-md-12 col-xs-12 col-sm-12">
+				<div class="card shadow-sm my-5">
+					<div class="card-body p-0">
+						<div class="login-form">
+							<div class="text-center form-group">
+								<img src="<?=base_url('assets/img/icon.png')?>" alt="logo" title="logo" width="100" height="auto">
+								<h1 class="h4 text-gray-900 mb-4">Authentication</h1>
+							</div>
+							<form class="user" method="post" id="form" action="<?=base_url('login')?>">
+								<?php if (isset($validation)): ?>
+>>>>>>> 1de182032707472a9accd497c992070c2b621cc2
+									<div class="form-group">
+										<div class="alert alert-danger">
+											<button type="button" class="close" data-dismiss="alert">×</button>
+
+<<<<<<< HEAD
+											<?php if (method_exists($validation, 'listErrors')) : ?>
+												<?= $validation->listErrors() ?>
+											<?php endif; ?>
+
+											<?php if (is_string($validation)) : ?>
+												<?= $validation ?>
+											<?php endif; ?>
+										</div>
+									</div>
+								<?php endif; ?>
+								<div class="form-group">
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text bg-purple" id="basic-addon"><i class="fa fa-user text-white"></i></span>
+										</div>
+										<input type="email" class="form-control" id="login" name="login" placeholder="Enter your login" aria-label="login" aria-describedby="basic-addon" required="">
+=======
+											<?php if (method_exists($validation, 'listErrors')): ?>
+												<?=$validation->listErrors()?>
+											<?php endif;?>
+
+											<?php if (is_string($validation)): ?>
+												<?=$validation?>
+											<?php endif;?>
+										</div>
+									</div>
+								<?php endif;?>
+								<div class="form-group">
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text bg-vue" id="basic-addon"><i class="fa fa-user"></i></span>
+										</div>
+										<input type="text" class="form-control" id="login" name="login" placeholder="Enter your login" aria-label="login"
+										aria-describedby="basic-addon" required="">
+>>>>>>> 1de182032707472a9accd497c992070c2b621cc2
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+<<<<<<< HEAD
+											<span class="input-group-text bg-purple" id="basic-addon1"><i class="fa fa-lock text-white"></i></span>
+										</div>
+										<input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" aria-label="password" aria-describedby="basic-addon1" required="">
+=======
+											<span class="input-group-text bg-vue" id="basic-addon1"><i class="fa fa-lock"></i></span>
+										</div>
+										<input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" aria-label="password"
+										aria-describedby="basic-addon1" required="">
+>>>>>>> 1de182032707472a9accd497c992070c2b621cc2
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="custom-control custom-checkbox small" style="line-height: 1.5rem;">
+										<input type="checkbox" class="custom-control-input" id="customCheck">
+										<label class="custom-control-label" for="customCheck">Remember me</label>
+									</div>
+								</div>
+								<div class="form-group">
+<<<<<<< HEAD
+									<button class="btn btn-purple btn-primary btn-block" type="submit"> Login </button>
+								</div>
+							</form>
+=======
+									<button class="btn btn-vue btn-primary btn-block form-control-sm" type="submit"> Login </button>
+								</div>
+							</form>
+							<hr>
+>>>>>>> 1de182032707472a9accd497c992070c2b621cc2
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Login Content -->
+	<script src="<?= base_url() ?>/assets/js/jquery.3.2.1.min.js"></script>
+	<script src="<?= base_url() ?>/assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>
