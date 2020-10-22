@@ -59,13 +59,13 @@
                                 <table class="table table-striped table-condensed table-hover table-sm" id="tablePayment" style="width: 100% !important;">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th>Id</th>
-                                            <th>Client</th>
-                                            <th>Item</th>
-                                            <th>Price</th>
-                                            <th>Link</th>
-                                            <th>Status</th>
-                                            <th>Expire in</th>
+                                            <th style="border-top-left-radius: 4px;">Id</th>
+                                            <th><i class="fa fa-user"></i> Client</th>
+                                            <th><i class="fa fa-cube"></i> Item</th>
+                                            <th><i class="fa fa-dollar-sign"></i> Price</th>
+                                            <th><i class="fa fa-link"></i> Link</th>
+                                            <th><i class="fa fa-info"></i> Status</th>
+                                            <th style="border-top-right-radius: 4px;"><i class="fa fa-calendar"></i> Expire in</th>
                                         </tr>
                                     </thead>
                                     <thead class="filters hidden-xs">

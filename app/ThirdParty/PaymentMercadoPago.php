@@ -7,14 +7,15 @@ use App\Database\Entities\ProductEntity;
 
 class PaymentMercadoPago {
 
-    private $apiUrl;
-    private $apiKey;
-    private $mercado_pago;
+    private string $endpoint;
+	private string $api_key;
+	private ?string $payment_link = null;
+	private array $items_array;
+	private $mercado_pago;
 
-    public function __construct() {
-        $this->apiUrl       = "https://api.mercadopago.com/v1";
-        $this->apiKey       = env('KEY_MP');
-        $this->mercado_pago = MercadoPago\SDK::setAccessToken($this->apiKey);
+    public function __construct(string $apiKey) {
+        $this->endpoint = "https://api.mercadopago.com/v1";
+        $this->api_key = $apiKey;
     }
 
 	/**
@@ -24,25 +25,25 @@ class PaymentMercadoPago {
 	 * @return string|null
 	 */
     public function createLinkPayment(ProductEntity $product):? string {
-		$paymentLink = null;
 
 		if ($product) {
 
+			$this->mercado_pago = MercadoPago\SDK::setAccessToken($this->api_key);
+
 			$preference = new MercadoPago\Preference();
-			$itemsArray = [];
-			
+
 			foreach ($product as $items) {
 
 				$item = new MercadoPago\Item();
 	
-				$item->title 	  = $items['name'];
-				$item->quantity   = $items['qty'];
-				$item->unit_price = $items['subtotal'];
+				$item->title 	  = $items->name;
+				$item->quantity   = $items->qty;
+				$item->unit_price = $items->price;
 				
-				$itemsArray[] 	  = $item;
+				$this->itemsArray[] = $item;
 			}
 
-			$preference->items = $itemsArray;
+			$preference->items = $this->itemsArray;
 
 			//$preference->payment_methods = [
 			//	"excluded_payment_types" => [
@@ -53,12 +54,12 @@ class PaymentMercadoPago {
 			//	"installments" => 12
 			//];
 
-			$preference->external_reference = "A Test payment";
+			$preference->external_reference = "Coffe Code";
 			$preference->save();
 
-			$paymentLink = $preference->sandbox_init_point;
+			$this->payment_link = $preference->sandbox_init_point;
 		}
 
-		return $paymentLink;
+		return $this->payment_link;
 	}
 }

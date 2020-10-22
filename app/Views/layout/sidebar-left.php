@@ -13,10 +13,39 @@
 						<p>Dashboard</p>
 					</a>
 				</li>
+
+				<li class="<?=base_url('client') == current_url() ? 'active' : ''?>">
+					<a href="<?=base_url('client')?>">
+						<i class="fa fa-building"></i>
+						<p>Clientes</p>
+					</a>
+				</li>
+
+				<li class="<?=base_url('product') == current_url() ? 'active' : ''?>">
+					<a href="<?=base_url('product')?>">
+						<i class="fa fa-store-alt"></i>
+						<p>Produtos / Serviços</p>
+					</a>
+				</li>
+
 				<li class="<?=base_url('payment') == current_url() ? 'active' : ''?>">
 					<a href="<?=base_url('payment')?>">
-						<i class="fa fa-coins"></i>
-						<p>Payments</p>
+						<i class="fa fa-hand-holding-usd"></i>
+						<p>Pagamentos</p>
+					</a>
+				</li>
+
+				<li class="<?=base_url('method_payment') == current_url() ? 'active' : ''?>">
+					<a href="<?=base_url('method_payment')?>">
+						<i class="fa fa-credit-card"></i>
+						<p>Métodos do Pgto</p>
+					</a>
+				</li>
+
+				<li class="<?=base_url('user') == current_url() ? 'active' : ''?>">
+					<a href="<?=base_url('user')?>">
+						<i class="fa fa-users"></i>
+						<p>Usuários</p>
 					</a>
 				</li>
 			</ul>
