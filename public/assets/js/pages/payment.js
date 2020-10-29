@@ -2,6 +2,19 @@ var tablePayment
 
 $(document).ready(() => {
     loadTablePayments()
+
+
+    $('.price').inputmask('currency', {
+        autoUnmask: true,
+        radixPoint: ",",
+        groupSeparator: ".",
+        allowMinus: false,
+        prefix: '',
+        digits: 2,
+        digitsOptional: false,
+        rightAlign: true,
+        unmaskAsNumber: true
+    })
 })
 
 function loadTablePayments() {
@@ -73,6 +86,18 @@ function loadTablePayments() {
                 data: "expire_in",
                 class: "text-center",
                 width: "70px"
+            }, 
+            {
+                orderable: false,
+                data: null,
+                defaultContent: `
+                <a href="#" type="button" title="Editar" class="label badge-purple text-white">
+                    <i class="fa fa-copy"> </i>
+                </a>
+                <a href="#" type="button" title="Excluir" class="label badge-purple text-white">
+                    <i class="fa fa-facebook"> </i>
+                </a>
+            `
             }
         ],
         dom: "Bfrtip",
@@ -82,7 +107,8 @@ function loadTablePayments() {
     })
 
     $(`#tablePayment .filters th`).each(function (idx, val) {
-        $(this).html(`<input type="text" style="width: 100% !important;height: 24px !important; margin-bottom: 4px !important; border-radius: 3px !important" class="form-control hidden-xs" placeholder=""/>`)
+        if (idx < 7)
+            $(this).html(`<input type="text" style="width: 100% !important;height: 24px !important; margin-bottom: 4px !important; border-radius: 3px !important" class="form-control hidden-xs" placeholder=""/>`)
     })
 
     tablePayment.columns().eq(0).each(function (index) {

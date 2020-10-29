@@ -28,4 +28,6 @@
                 </div>
             </div>
         </div>
+
+    <?=view('layout/scripts')?>
     <script src="<?= base_url('') ?>/assets/js/pages/dashboard.js?v=<?= JS_VERSION ?>"></script>

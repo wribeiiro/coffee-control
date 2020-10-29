@@ -17,30 +17,50 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="modal fade" id="modalPayment" tabindex="-1" role="dialog" aria-labelledby="titlePayment" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
+                <div class="modal fade" id="modalPayment" role="dialog" data-backdrop="false">
+                    <div class="modal-dialog modal-lg">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="titlePayment">Ticket</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                            <div class="modal-header border-top-purple">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h5 class="modal-title"> Create link payment</h5>
                             </div>
+  
                             <div class="modal-body">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                        <input type="text" class="form-control form-control-sm" id="recipient-name">
+                                <form class="form" id="formPayment">
+                                    <div class="row form-group">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label" for="client"><i class="fa fa-user"></i> Client</label>
+                                                <select class="form-control" name="client" id="client">
+                                                    <option selected disabled> <- Select -></option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label" for="product"><i class="fa fa-cubes"></i> Product / Service</label>
+                                                <select class="form-control" name="product" id="product">
+                                                    <option selected disabled> <- Select -></option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label" for="product"><i class="fa fa-coins"></i> Price</label>
+                                                <input class="form-control price" name="price" id="price" value="0,00" readonly>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="message-text" class="col-form-label">Message:</label>
-                                        <textarea class="form-control form-control-sm" id="message-text"></textarea>
+
+                                    <div class="row">
+                                        <div class="col-md-12 pull-right">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal"> <i class="fa fa-window-close"></i> Close</button>
+                                            <button type="button" class="btn btn-purple"> <i class="fa fa-wallet"></i> Create link</button>
+                                        </div>
                                     </div>
                                 </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save</button>
                             </div>
                         </div>
                     </div>
@@ -65,11 +85,13 @@
                                             <th><i class="fa fa-dollar-sign"></i> Price</th>
                                             <th><i class="fa fa-link"></i> Link</th>
                                             <th><i class="fa fa-info"></i> Status</th>
-                                            <th style="border-top-right-radius: 4px;"><i class="fa fa-calendar"></i> Expire in</th>
+                                            <th><i class="fa fa-calendar"></i> Expire in</th>
+                                            <th style="border-top-right-radius: 4px;"><i class="fa fa-pencil"></i> Actions</th>
                                         </tr>
                                     </thead>
                                     <thead class="filters hidden-xs">
                                         <tr>
+                                            <th></th>
                                             <th></th>
                                             <th></th>
                                             <th></th>
@@ -87,4 +109,6 @@
                 </div>  
             </div>
         </div>
+
+    <?=view('layout/scripts')?>
     <script src="<?= base_url('')?>/assets/js/pages/payment.js?v=<?=JS_VERSION?>"></script>

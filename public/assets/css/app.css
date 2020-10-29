@@ -24,6 +24,10 @@ body {
     border-left: .25rem solid var(--purple) !important;
 }
 
+.border-top-purple {
+    border-top: 2px solid var(--purple) !important;
+}
+
 .font-weight-bold {
     font-weight: 600;
 }

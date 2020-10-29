@@ -21,7 +21,6 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="<?=base_url('')?>/assets/css/app.css" rel="stylesheet" />
 
-    <script src="<?=base_url('')?>/assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
     <script>
         const BASE_URL = "<?=base_url()?>"
     </script>
