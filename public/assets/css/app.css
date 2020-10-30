@@ -28,6 +28,10 @@ body {
     border-top: 2px solid var(--purple) !important;
 }
 
+.text-purple {
+    color: var(--purple) !important;
+}
+
 .font-weight-bold {
     font-weight: 600;
 }

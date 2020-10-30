@@ -32,7 +32,10 @@
                                             <div class="form-group">
                                                 <label class="control-label" for="client"><i class="fa fa-user"></i> Client</label>
                                                 <select class="form-control" name="client" id="client">
-                                                    <option selected disabled> <- Select -></option>
+                                                    <option selected disabled>--- Select ---</option>
+                                                    <?php foreach ($clients as $client): ?>
+                                                    <option value="<?=$client->id?>"><?=$client->name?></option>
+                                                    <?php endforeach; ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -41,7 +44,10 @@
                                             <div class="form-group">
                                                 <label class="control-label" for="product"><i class="fa fa-cubes"></i> Product / Service</label>
                                                 <select class="form-control" name="product" id="product">
-                                                    <option selected disabled> <- Select -></option>
+                                                    <option selected disabled>--- Select ---</option>
+                                                    <?php foreach ($products as $product): ?>
+                                                    <option value="<?=$product->id?>" data-price="<?=$product->price?>"><?=$product->name?></option>
+                                                    <?php endforeach; ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -76,17 +82,17 @@
                             </div>
 
                             <div class="table-responsive">
-                                <table class="table table-striped table-condensed table-hover table-sm" id="tablePayment" style="width: 100% !important;">
+                                <table class="table table-striped table-condensed table-hover table-sm" id="tablePayment" style="width: 100% !important">
                                     <thead class="thead-dark">
                                         <tr>
                                             <th style="border-top-left-radius: 4px;">Id</th>
-                                            <th><i class="fa fa-user"></i> Client</th>
-                                            <th><i class="fa fa-cube"></i> Item</th>
-                                            <th><i class="fa fa-dollar-sign"></i> Price</th>
-                                            <th><i class="fa fa-link"></i> Link</th>
-                                            <th><i class="fa fa-info"></i> Status</th>
-                                            <th><i class="fa fa-calendar"></i> Expire in</th>
-                                            <th style="border-top-right-radius: 4px;"><i class="fa fa-pencil"></i> Actions</th>
+                                            <th> Client</th>
+                                            <th> Item</th>
+                                            <th> Price</th>
+                                            <th> Link</th>
+                                            <th> Status</th>
+                                            <th> Expire in</th>
+                                            <th style="border-top-right-radius: 4px;"></th>
                                         </tr>
                                     </thead>
                                     <thead class="filters hidden-xs">

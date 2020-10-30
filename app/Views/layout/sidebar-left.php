@@ -17,35 +17,35 @@
 				<li class="<?=base_url('client') == current_url() ? 'active' : ''?>">
 					<a href="<?=base_url('client')?>">
 						<i class="fa fa-building"></i>
-						<p>Clientes</p>
+						<p>Clients</p>
 					</a>
 				</li>
 
 				<li class="<?=base_url('product') == current_url() ? 'active' : ''?>">
 					<a href="<?=base_url('product')?>">
 						<i class="fa fa-store-alt"></i>
-						<p>Produtos / Serviços</p>
+						<p>Products / Services</p>
 					</a>
 				</li>
 
 				<li class="<?=base_url('payment') == current_url() ? 'active' : ''?>">
 					<a href="<?=base_url('payment')?>">
 						<i class="fa fa-hand-holding-usd"></i>
-						<p>Pagamentos</p>
+						<p>Payments</p>
 					</a>
 				</li>
 
 				<li class="<?=base_url('method_payment') == current_url() ? 'active' : ''?>">
 					<a href="<?=base_url('method_payment')?>">
 						<i class="fa fa-credit-card"></i>
-						<p>Métodos do Pgto</p>
+						<p>Methods of payment</p>
 					</a>
 				</li>
 
 				<li class="<?=base_url('user') == current_url() ? 'active' : ''?>">
 					<a href="<?=base_url('user')?>">
 						<i class="fa fa-users"></i>
-						<p>Usuários</p>
+						<p>Users</p>
 					</a>
 				</li>
 			</ul>

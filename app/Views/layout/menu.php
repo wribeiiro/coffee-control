@@ -26,17 +26,17 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <p>
-                                    <?= session()->get('firstname') ?>
-                                    <b class="caret"></b>
-                                </p>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#"><i class="fa fa-cog"></i> Configurações</a></li>
-                                <li class="divider"></li>
-                                <li><a href="<?=base_url('logout')?>"><i class="fa fa-angle-double-left"></i> Sair</a></li>
-                              </ul>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <p>
+                                <?= session()->get('firstname') ?>
+                                <b class="caret"></b>
+                            </p>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                            <li class="divider"></li>
+                            <li><a href="<?=base_url('logout')?>"><i class="fa fa-angle-double-left"></i> Logoff</a></li>
+                            </ul>
                         </li>
 						<li class="separator hidden-lg"></li>
                     </ul>

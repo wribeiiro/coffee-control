@@ -15,6 +15,10 @@ $(document).ready(() => {
         rightAlign: true,
         unmaskAsNumber: true
     })
+
+    $('#product').on('change', function () {
+        $('#price').val(Number($("option:selected", this).data('price')))
+    })
 })
 
 function loadTablePayments() {
@@ -91,19 +95,18 @@ function loadTablePayments() {
                 orderable: false,
                 data: null,
                 defaultContent: `
-                <a href="#" type="button" title="Editar" class="label badge-purple text-white">
-                    <i class="fa fa-copy"> </i>
-                </a>
-                <a href="#" type="button" title="Excluir" class="label badge-purple text-white">
-                    <i class="fa fa-facebook"> </i>
-                </a>
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-purple dropdown-toggle" type="button" data-toggle="dropdown">ACTIONS <span class="caret"></span></button>
+                    <ul class="dropdown-menu text-left" style="left:inherit !important; right:0px; !important">
+                        <li><a href="#" type="button" title="Copy" class="badge-purple text-purple"><i class="far fa-copy"></i> Copy</a></li>
+                        <li><a href="#" type="button" title="Share" class="badge-purple text-purple"><i class="fab fa-whatsapp"></i> Share</a></li>
+                        <li><a href="#" type="button" title="Share" class="badge-purple text-purple"><i class="far fa-edit"></i> Edit</a></li>
+                    </ul>
+                </div>
             `
             }
         ],
-        dom: "Bfrtip",
-        createdRow: function (row, data) {
-
-        }
+        dom: "Bfrtip"
     })
 
     $(`#tablePayment .filters th`).each(function (idx, val) {
@@ -115,13 +118,5 @@ function loadTablePayments() {
         $('input', $(`#tablePayment .filters th`)[index]).on('keyup change', function () {
             table.column(index).search(this.value).draw()
         })
-    })
-
-    $(`#tablePayment tbody`).on('click', 'td', function() {
-
-        let tr  = $(this).closest('tr')
-        let row = table.row(tr)
-
-        $('#modalPayment').modal()
     })
 }
