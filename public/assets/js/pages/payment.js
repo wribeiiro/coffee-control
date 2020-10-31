@@ -31,7 +31,7 @@ function loadTablePayments() {
         searching: true,
         responsive: false,
         autoWidth: false,
-        language: translateTable(),
+        //language: translateTable(),
         order: [[0, "DESC"]],
         ajax: {
             url: url,
@@ -98,9 +98,9 @@ function loadTablePayments() {
                 <div class="dropdown">
                     <button class="btn btn-sm btn-purple dropdown-toggle" type="button" data-toggle="dropdown">ACTIONS <span class="caret"></span></button>
                     <ul class="dropdown-menu text-left" style="left:inherit !important; right:0px; !important">
-                        <li><a href="#" type="button" title="Copy" class="badge-purple text-purple"><i class="far fa-copy"></i> Copy</a></li>
-                        <li><a href="#" type="button" title="Share" class="badge-purple text-purple"><i class="fab fa-whatsapp"></i> Share</a></li>
-                        <li><a href="#" type="button" title="Share" class="badge-purple text-purple"><i class="far fa-edit"></i> Edit</a></li>
+                        <li><a href="#" type="button" title="Copy" class="badge-purple"><i class="far fa-copy text-purple"></i> Copy</a></li>
+                        <li><a href="#" type="button" title="Share" class="badge-purple"><i class="fab fa-whatsapp text-purple"></i> Share</a></li>
+                        <li><a href="#" type="button" title="Edit" class="badge-purple"><i class="far fa-edit text-purple"></i> Edit</a></li>
                     </ul>
                 </div>
             `
@@ -110,8 +110,7 @@ function loadTablePayments() {
     })
 
     $(`#tablePayment .filters th`).each(function (idx, val) {
-        if (idx < 7)
-            $(this).html(`<input type="text" style="width: 100% !important;height: 24px !important; margin-bottom: 4px !important; border-radius: 3px !important" class="form-control hidden-xs" placeholder=""/>`)
+        if (idx < 7) $(this).html(`<input type="text" style="width: 100% !important;height: 24px !important; margin-bottom: 4px !important; border-radius: 3px !important" class="form-control hidden-xs" placeholder=""/>`)
     })
 
     tablePayment.columns().eq(0).each(function (index) {

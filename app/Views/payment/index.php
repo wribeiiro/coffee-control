@@ -62,8 +62,8 @@
 
                                     <div class="row">
                                         <div class="col-md-12 pull-right">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal"> <i class="fa fa-window-close"></i> Close</button>
-                                            <button type="button" class="btn btn-purple"> <i class="fa fa-wallet"></i> Create link</button>
+                                            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"> <i class="fa fa-window-close"></i> Close</button>
+                                            <button type="button" class="btn btn-sm btn-purple"> <i class="fa fa-wallet"></i> Create link</button>
                                         </div>
                                     </div>
                                 </form>
