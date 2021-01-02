@@ -7,4 +7,5 @@ class DashboardModel extends Model {
 
     //protected $table = '';
     
+    protected $returnType = 'object';
 }

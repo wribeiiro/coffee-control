@@ -5,17 +5,9 @@ use CodeIgniter\Model;
 
 class ClientModel extends Model
 {
-	protected $table = 'clients';
+    protected $table = 'clients';
+    
+    protected $returnType = 'object';
 
-	/**
-     * Undocumented function
-     *
-     * @return array
-     */
-    public function getClients(): array {
-        $sql   = "SELECT * FROM clients ORDER BY name ASC";
-        $query = $this->db->query($sql);
-
-		return $query->getResult();
-	}
+    //protected $allowedFields = ['name', 'observation'];
 }

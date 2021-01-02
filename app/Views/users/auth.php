@@ -47,7 +47,7 @@
 										<div class="input-group-prepend">
 											<span class="input-group-text bg-purple" id="basic-addon"><i class="fa fa-user text-white"></i></span>
 										</div>
-										<input type="email" class="form-control" id="login" name="login" placeholder="Enter your login" aria-label="login" aria-describedby="basic-addon" required="">
+										<input type="email" class="form-control" id="email" name="email" placeholder="Enter your login" aria-label="login" aria-describedby="basic-addon" required="">
 									</div>
 								</div>
 								<div class="form-group">

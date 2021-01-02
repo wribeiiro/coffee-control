@@ -7,15 +7,7 @@ class ProductModel extends Model
 {
 	protected $table = 'products';
 
-	/**
-     * Undocumented function
-     *
-     * @return array
-     */
-    public function getProducts(): array {
-        $sql   = "SELECT * FROM products ORDER BY name ASC";
-        $query = $this->db->query($sql);
+	protected $returnType = 'object';
 
-		return $query->getResult();
-	}
+	protected $allowedFields = ['name', 'observation'];
 }

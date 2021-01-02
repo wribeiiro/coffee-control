@@ -16,6 +16,8 @@
     <?=view('layout/menu')?>
     <div class="content">
         <div class="container-fluid">
+
+        <?php print_r($products); exit; ?>
             <div class="row">
                 <div class="modal fade" id="modalPayment" role="dialog" data-backdrop="false">
                     <div class="modal-dialog modal-lg">
@@ -45,6 +47,9 @@
                                                 <label class="control-label" for="product"><i class="fa fa-cubes"></i> Product / Service</label>
                                                 <select class="form-control" name="product" id="product">
                                                     <option selected disabled>--- Select ---</option>
+
+                                                   
+
                                                     <?php foreach ($products as $product): ?>
                                                     <option value="<?=$product->id?>" data-price="<?=$product->price?>"><?=$product->name?></option>
                                                     <?php endforeach; ?>

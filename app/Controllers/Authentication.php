@@ -1,20 +1,15 @@
 <?php 
 
 namespace App\Controllers;
-use App\Models\UsersModel;
+
+use CodeIgniter\RESTful\ResourceController;
+use CodeIgniter\HTTP\Response;
+use App\Services\AuthenticationService;
 
 class Authentication extends BaseController {
     
-    protected $users_model;
-    protected array $rules = [
-        'login'    => 'required|valid_email', 
-        'password' => 'required'
-    ];
-
-    public function __construct() { 
+    public function __construct() {
         $this->data['complement'] = 'Login';
-        
-        //$this->users_model = new UsersModel();
     }
 
 	public function index() { 
@@ -22,30 +17,20 @@ class Authentication extends BaseController {
     }
 
     public function login() {
-        if (!$this->validate($this->rules)) {
-            $this->data['validation'] = $this->validator;
-        } else {
-
-            $login    = $this->request->getPost("login", FILTER_SANITIZE_EMAIL);
-            $password = $this->request->getPost("password", FILTER_SANITIZE_STRING);
-
-            //$userData = $this->users_model->getUser($login, md5($password));
-
-            if ($login === 'welleh10@gmail.com' && $password === 'xbox360') {
-
-                session()->set([
-                    'id'         => 1,
-                    'firstname'  => 'Wellisson',
-                    'email'      => 'welleh10@gmail.com',
-                    'isLoggedIn' => true
-                ]);
-    
-                return redirect()->to(base_url('dashboard'));
-            } else {
-                $this->data['validation'] = 'Invalid Credentials';
-            }
-        }
         
+        $this->data['validation'] = 'Invalid Credentials';
+
+        $userData = (new AuthenticationService())->auth($this->request);
+
+        if (count($userData) && !isset($userData['code'])) {
+            session()->set($userData);
+            return redirect()->to(base_url('dashboard'));
+        }
+
+        if (count($userData) && isset($userData['code'])) {
+            $this->data['validation'] = $userData['message'];
+        }
+
         echo view('users/auth', $this->data);
     }
 
